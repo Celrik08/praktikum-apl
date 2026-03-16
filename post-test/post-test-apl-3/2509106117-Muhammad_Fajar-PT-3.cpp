@@ -25,16 +25,12 @@ Barang barang[100];
 int jumlah_barang = 0;
 int jumlah_user = 0;
 
-// Ini adalah fungsi rekrusif
-
 int total_stok(int index){
     if(index < 0){
         return 0;
     }
     return barang[index].stok + total_stok(index-1);
 }
-
-// Ini adalah fungsi overloading
 
 void Output(string pesan){
     cout<<pesan<<endl;
@@ -43,8 +39,6 @@ void Output(string pesan){
 void Output(string pesan, int nilai){
     cout<<pesan<<nilai<<endl;
 }
-
-// Ini adalah fungsi untuk mengecek login
 
 bool cek_user(User users[], int jumlah_user, string username, string password){
 
@@ -58,8 +52,6 @@ bool cek_user(User users[], int jumlah_user, string username, string password){
 
     return false;
 }
-
-// Ini adalah prosedur untuk register user
 
 void register_user(User users[], int &jumlah_user){
 
@@ -75,8 +67,6 @@ void register_user(User users[], int &jumlah_user){
 
     Output("Registrasi berhasil ditambahkan, silahkan anda login kembali");
 }
-
-// Ini adalah prosedur untuk menambahkan barang
 
 void tambah_barang(Barang barang[], int &jumlah_barang){
 
@@ -102,8 +92,6 @@ void tambah_barang(Barang barang[], int &jumlah_barang){
     Output("Barang berhasil ditambahkan. Silahkan cek datanya");
 }
 
-// Ini adalah prosedur untuk melihat barang
-
 void lihat_barang(Barang barang[], int jumlah_barang){
 
     cout<<"\nDATA BARANG\n";
@@ -125,8 +113,6 @@ void lihat_barang(Barang barang[], int jumlah_barang){
 
     Output("Total stok barang : ", total_stok(jumlah_barang-1));
 }
-
-// Ini adalah prosedur untuk mengubah barang
 
 void ubah_barang(Barang barang[], int jumlah_barang){
 
@@ -179,8 +165,6 @@ void ubah_barang(Barang barang[], int jumlah_barang){
 
 }
 
-// Ini adalah prosedur untuk menghapus barang
-
 void hapus_barang(Barang barang[], int &jumlah_barang){
 
     int id;
@@ -206,8 +190,6 @@ void hapus_barang(Barang barang[], int &jumlah_barang){
     }
 
 }
-
-// Ini adalah prosedur untuk menampilkan menu
 
 void menu(Barang barang[], int &jumlah_barang){
 
@@ -247,8 +229,6 @@ void menu(Barang barang[], int &jumlah_barang){
     }while(pilih != 5);
 
 }
-
-// Ini adalah prosedur untuk login
 
 void login(User users[], int jumlah_user, Barang barang[], int &jumlah_barang){
 
